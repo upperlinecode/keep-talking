@@ -1,0 +1,12 @@
+.winning {
+  background: lightgreen;
+}
+
+.losing {
+  background-color: pink;
+}
+
+.NumberDials {
+  max-width: 5%;
+  margin: 1em;
+}
