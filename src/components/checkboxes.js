@@ -3,45 +3,40 @@ import './checkboxes.css'
 
 const Checkboxes = () => {
   const component = new React.Component()
+  // This version starts with four checkmarks.
+  // Make them work before adding more.
   const answerKey = [
-    true, false, true, true,
-    false, false, false, true,
-    false, false, true, false,
-    true, true, false, false
+    true, false, true, true
   ]
 
   component.state = {
-    checks: [true, false, true, true, true, true, true, true, true, true, true, true, true, true, true, true]
+    checks: [true, false, true, true]
   }
 
   const handleClickForBox = (i) => {
+    // This first line exists just for debugging purposes.
+    console.log("You clicked on box #" + i)
     // Start by accessing the current array of checks.
     const arrayOfChecks = component.state.checks
-    if (arrayOfChecks[i] == true) {
-      arrayOfChecks[i] = false
-    } else {
-      arrayOfChecks[i] = true
-    }
-    component.setState({checks: arrayOfChecks})
+    // Do whatever logic you'll need to do to update that box.
+    // YOUR
+    // CODE
+    // HERE
+    // (Remember to use the component.setState(newState) method afterwards!)
   }
 
   const countTrue = (arrayOfChecks) => {
-    let total = 0
-    arrayOfChecks.forEach(entry => {
-      if (entry == true) {
-        total += 1
-      }
-    })
-    return total
+    // You'll want to write a method that counts the number of "true" in your
+    // state's "checks" array, so that you can tell the user what their
+    // checkmarks are. Right now there's a placeholder return value: "##".
+    return "##"
   }
 
   const winning = () => {
-    for (let i = 0; i < 16; i++) {
-      if (component.state.checks[i] != answerKey[i]) {
-        return false
-      }
-    }
-    return true
+    // You'll need to write a function that returns false, unless every item
+    // in your array matches the answer key. Right now there's a placeholder
+    // return value of false.
+    return false
   }
 
   component.render = () => {
@@ -55,22 +50,10 @@ const Checkboxes = () => {
           <h3>Your Sum: {countTrue(arrayOfChecks)}</h3>
         </div>
         <div className="checkGrid">
-          <div className={"checkbox " + arrayOfChecks[0]} onClick={()=>handleClickForBox(0)}/>
+          <div className={"checkbox " + arrayOfChecks[0]} onClick={()=>handleClickForBox(0)}>{arrayOfChecks[0]}</div>
           <div className={"checkbox " + arrayOfChecks[1]} onClick={()=>handleClickForBox(1)}/>
           <div className={"checkbox " + arrayOfChecks[2]} onClick={()=>handleClickForBox(2)}/>
           <div className={"checkbox " + arrayOfChecks[3]} onClick={()=>handleClickForBox(3)}/>
-          <div className={"checkbox " + arrayOfChecks[4]} onClick={()=>handleClickForBox(4)}/>
-          <div className={"checkbox " + arrayOfChecks[5]} onClick={()=>handleClickForBox(5)}/>
-          <div className={"checkbox " + arrayOfChecks[6]} onClick={()=>handleClickForBox(6)}/>
-          <div className={"checkbox " + arrayOfChecks[7]} onClick={()=>handleClickForBox(7)}/>
-          <div className={"checkbox " + arrayOfChecks[8]} onClick={()=>handleClickForBox(8)}/>
-          <div className={"checkbox " + arrayOfChecks[9]} onClick={()=>handleClickForBox(9)}/>
-          <div className={"checkbox " + arrayOfChecks[10]} onClick={()=>handleClickForBox(10)}/>
-          <div className={"checkbox " + arrayOfChecks[11]} onClick={()=>handleClickForBox(11)}/>
-          <div className={"checkbox " + arrayOfChecks[12]} onClick={()=>handleClickForBox(12)}/>
-          <div className={"checkbox " + arrayOfChecks[13]} onClick={()=>handleClickForBox(13)}/>
-          <div className={"checkbox " + arrayOfChecks[14]} onClick={()=>handleClickForBox(14)}/>
-          <div className={"checkbox " + arrayOfChecks[15]} onClick={()=>handleClickForBox(15)}/>
         </div>
       </div>
     )

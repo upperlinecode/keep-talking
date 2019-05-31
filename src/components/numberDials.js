@@ -12,48 +12,36 @@ const NumberDials = () => {
   }
 
   const winning = (a, b, c, d) => {
-    return (
-      a === 9 &&
-      b === 6 &&
-      c === 3 &&
-      d === 0
-    )
+    // Function to chech and see if YOUR code (a,b,c,d)
+    // matches the secret code (9,6,3,0)
+    if (a === 9 && b === 6 && c === 3 && d === 0) {
+      return true
+    }
+    return false
   }
 
   component.render = () => {
     // To increase readability we are making variables with shorter names
-    // This also saves us the trouble of unpacking state if we want to modify it.
+    // This also saves us the trouble of unpacking state if we want to modify later
     const a = component.state.numberA
     const b = component.state.numberB
     const c = component.state.numberC
     const d = component.state.numberD
+
+
+
     return (
       <div className={"NumberDials" + (winning(a, b, c, d) ? " winning" : " losing")}>
         <h1 className="directions">Guess the 4-digit code</h1>
         <div className="hint">
           <h3>Target Sum: 18</h3>
-          <h3>Your Sum: {a + b + c + d}</h3>
+          <h3>Your Sum: ##</h3>
         </div>
         <div className="numberPlates">
           <div className="numberPlate">
-            <button onClick={()=>component.setState({numberA: (a + 1) % 10})}>↑</button>
-            <div className="digit">{component.state.numberA}</div>
-            <button onClick={()=>component.setState({numberA: a==0? 9 : (a - 1) })}>↓</button>
-          </div>
-          <div className="numberPlate">
-            <button onClick={()=>component.setState({numberB: (b + 1) % 10})}>↑</button>
-            <div className="digit">{component.state.numberB}</div>
-            <button onClick={()=>component.setState({numberB: b==0? 9 : (b - 1)})}>↓</button>
-          </div>
-          <div className="numberPlate">
-            <button onClick={()=>component.setState({numberC: (c + 1) % 10})}>↑</button>
-            <div className="digit">{component.state.numberC}</div>
-            <button onClick={()=>component.setState({numberC: c==0? 9 : (c - 1)})}>↓</button>
-          </div>
-          <div className="numberPlate">
-            <button onClick={()=>component.setState({numberD: (d + 1) % 10})}>↑</button>
-            <div className="digit">{component.state.numberD}</div>
-            <button onClick={()=>component.setState({numberD: d==0? 9 : (d - 1)})}>↓</button>
+            <button onClick={()=>component.setState({numberA: a + 1})}>↑</button>
+            <div className="digit">##A</div>
+            <button>↓</button>
           </div>
         </div>
       </div>

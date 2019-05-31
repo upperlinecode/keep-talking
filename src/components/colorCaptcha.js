@@ -3,13 +3,11 @@ import './colorCaptcha.css'
 
 const ColorCaptcha = () => {
   const component = new React.Component()
+  // This is the RGB value for pink - the background color of the component.
   const answerColor = "rgb(255, 192, 203)"
 
-  component.state = {
-    red: 0,
-    green: 0,
-    blue: 0
-  }
+  // component.state hasn't been fully defined yet.
+  component.state = {}
 
   component.render = () => {
     // Access the state variables
@@ -19,19 +17,19 @@ const ColorCaptcha = () => {
     let yourColor = `rgb(${red}, ${green}, ${blue})`
 
     const winning = () => {
-      console.log("Your color: " + yourColor)
-      console.log("Answer color: " + answerColor)
-      if (yourColor === answerColor) {
-        return true
-      }
+      // Write code here that returns true if your color matches the answer
+      // color, and returns false if it doesn't. There's a placeholder return
+      // already here.
       return false
     }
 
     const recolor = (colorName, e) => {
+      // The variable e is passed in by the event, and represents the event itself.
+      // The event's .target is the range (aka the slider) input.
+      // The target's .value is the current number the slider is at.
       console.log(e.target.value)
-      const prevState  = {...component.state}
-      prevState[colorName] = parseInt(e.target.value)
-      component.setState(prevState)
+      console.log("changing color for: " + colorName)
+      // You'll want to update the state so that the color
     }
 
     return (
@@ -39,21 +37,15 @@ const ColorCaptcha = () => {
         <h1 className="directions">Match the background color perfectly</h1>
         <div className="hint">
           <h3>Target Total: 650</h3>
-          <h3>Your Total: {red + blue + green}</h3>
+          <h3>Your Total: {}</h3>
         </div>
         <div className="colorBlock">
           <div className="colorSliders">
             <input type="range" min="1" max="255" defaultValue={red}
               onChange={(e)=>{recolor("red", e)}}
             />
-            <input type="range" min="1" max="255" defaultValue={green}
-              onChange={(e)=>{recolor("green", e)}}
-            />
-            <input type="range" min="1" max="255" defaultValue={blue}
-              onChange={(e)=>{recolor("blue", e)}}
-            />
           </div>
-          <div className="colorDisplay" style={{"background-color": yourColor}}></div>
+          <div className="colorDisplay" style={{"backgroundColor": "rgb(200, 220, 220)"}}></div>
         </div>
       </div>
     )

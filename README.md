@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# CodeBreakers React Lab
 
-## Available Scripts
+![Keypad](https://media.giphy.com/media/3o6MbdTboTFWOUsLkc/giphy.gif)
 
-In the project directory, you can run:
+## The Goal
 
-### `npm start`
+Ultimately we're going to create a puzzle app that represents a security system. In order to get past the system, a user will need to enter the correct numerical code, check the correct pattern of checkboxes in a grid, and finally match a color EXACTLY to the background.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+These components are half-built, but not fully-built. You're going to finish building as many of them as you can.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## The Setup
 
-### `npm test`
+Clone this lab down. If you plan to keep a copy of it for yourself, `cd` into the lab and remove the `.git` folder with `rm -rf .git`.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Remember that you'll likely also need to run `npm install` before running `npm start`.
 
-### `npm run build`
+## The Lab
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The styling is mostly built out, so you probably won't need to work much on the CSS, but the components are still pretty rough. Each one has a list of features you'll want to build out.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Part One: The 4-digit NumberDials Lock
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+###### Core features:
+1. Make the component's state's `numberA` property display where it currently says `##A`.
+2. The increase button works, but the decrease button doesn't. Build the decrease button's `onClick` function.
+3. Right now there's only a `numberPlate` div for the `numberA` value. Build out sibling elements that are also number plates for the other three numbers.
+4. Have "Your Sum" `<h3>` element display the sum of your current four digits.
 
-### `npm run eject`
+###### Stretch features:
+* Fix the number plates so that they can only ever show a single, non-negative digit, 0-9.
+* Find a way to randomize the code when a user first loads the page. Make the hint accurate.
+* Come up with a better hint mechanism. Right now there are still hundreds of combos that would total to any given sum.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Part Two: The Checkboxes Pattern Board
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+###### Core features:
+0. BEFORE fixing this component, make sure you understand how the checkboxing works. The CSS is written so that if a div has both "checkbox" and "true" in it's class list, it will be styled with a check. Otherwise, it will be rendered  without one. 
+1.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+###### Stretch features:
+*
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Part Three: The ColorCaptcha Slider Test
 
-## Learn More
+###### Core features:
+1.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+###### Stretch features:
+*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### BONUS Part Four: The Slider Puzzle
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This last part was built, but never finished, and it isn't included in the `App.js` file yet. The actual sliding mechanic is already built out, but the answer key and some other features (including the `winning()` function to see if the puzzle is finished correctly) still need to be built out.
