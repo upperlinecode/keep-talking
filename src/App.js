@@ -7,14 +7,20 @@ import Checkboxes from './components/checkboxes'
 import ColorCaptcha from './components/colorCaptcha'
 
 const App = () => {
-  return (
-    <div className="App">
-      <Navbar/>
-      <NumberDials/>
-      <Checkboxes/>
-      <ColorCaptcha/>
-    </div>
-  );
+  const component = new React.Component();
+  
+  component.render = () => {
+    return (
+      <div className="App">
+        <Navbar/>
+        <NumberDials/>
+        <Checkboxes/>
+        <ColorCaptcha/>
+      </div>
+    );
+  }
+  
+  return component
 }
 
 export default App;
