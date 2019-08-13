@@ -46,14 +46,14 @@ const Checkboxes = () => {
       <div className={"Checkboxes " + (winning(arrayOfChecks) ? "winning" : "losing")}>
         <h1 className="directions">Check only the correct boxes</h1>
         <div className="hint">
-          <h3>Target Sum: 7</h3>
+          <h3>Target Sum: 3</h3>
           <h3>Your Sum: {countTrue(arrayOfChecks)}</h3>
         </div>
         <div className="checkGrid">
-          <div className={"checkbox " + arrayOfChecks[0]} onClick={()=>handleClickForBox(0)}>{arrayOfChecks[0]}</div>
+          <div className={"checkbox " + arrayOfChecks[0]} onClick={()=>handleClickForBox(0)}/>
           <div className={"checkbox " + arrayOfChecks[1]} onClick={()=>handleClickForBox(1)}/>
-          <div className={"checkbox " + arrayOfChecks[2]} onClick={()=>handleClickForBox(2)}/>
-          <div className={"checkbox " + arrayOfChecks[3]} onClick={()=>handleClickForBox(3)}/>
+          <div className={"checkbox "} />
+          <div className={"checkbox "} />
         </div>
       </div>
     )
