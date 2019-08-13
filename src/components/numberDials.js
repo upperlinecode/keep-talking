@@ -38,22 +38,22 @@ const NumberDials = () => {
           <div className="numberPlate">
             <button onClick={()=>component.setState({numberA: (a + 1) % 10})}>↑</button>
             <div className="digit">{component.state.numberA}</div>
-            <button onClick={()=>component.setState({numberA: a==0? 9 : (a - 1) })}>↓</button>
+            <button onClick={()=>component.setState({numberA: a===0? 9 : (a - 1) })}>↓</button>
           </div>
           <div className="numberPlate">
             <button onClick={()=>component.setState({numberB: (b + 1) % 10})}>↑</button>
             <div className="digit">{component.state.numberB}</div>
-            <button onClick={()=>component.setState({numberB: b==0? 9 : (b - 1)})}>↓</button>
+            <button onClick={()=>component.setState({numberB: b===0? 9 : (b - 1)})}>↓</button>
           </div>
           <div className="numberPlate">
             <button onClick={()=>component.setState({numberC: (c + 1) % 10})}>↑</button>
             <div className="digit">{component.state.numberC}</div>
-            <button onClick={()=>component.setState({numberC: c==0? 9 : (c - 1)})}>↓</button>
+            <button onClick={()=>component.setState({numberC: c===0? 9 : (c - 1)})}>↓</button>
           </div>
           <div className="numberPlate">
             <button onClick={()=>component.setState({numberD: (d + 1) % 10})}>↑</button>
             <div className="digit">{component.state.numberD}</div>
-            <button onClick={()=>component.setState({numberD: d==0? 9 : (d - 1)})}>↓</button>
+            <button onClick={()=>component.setState({numberD: d===0? 9 : (d - 1)})}>↓</button>
           </div>
         </div>
       </div>
