@@ -11,7 +11,7 @@ const NumberDials = () => {
     numberD: 0,
   }
 
-  const winning = (a, b, c, d) => {
+  component.winning = (a, b, c, d) => {
     // Function to chech and see if YOUR code (a,b,c,d)
     // matches the secret code (9,6,3,0)
     if (a === 9 && b === 6 && c === 3 && d === 0) {
@@ -28,10 +28,8 @@ const NumberDials = () => {
     const c = component.state.numberC
     const d = component.state.numberD
 
-
-
     return (
-      <div className={"NumberDials" + (winning(a, b, c, d) ? " winning" : " losing")}>
+      <div className={"NumberDials" + (component.winning(a, b, c, d) ? " winning" : " losing")}>
         <h1 className="directions">Guess the 4-digit code</h1>
         <div className="hint">
           <h3>Target Sum: 18</h3>
