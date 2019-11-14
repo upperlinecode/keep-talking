@@ -18,6 +18,7 @@ const Checkboxes = () => {
     console.log("You clicked on box #" + i)
     // Start by accessing the current array of checks.
     const arrayOfChecks = component.state.checks
+    console.log(arrayOfChecks)
     // Do whatever logic you'll need to do to update that box.
     // YOUR
     // CODE

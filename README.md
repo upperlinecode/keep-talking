@@ -1,6 +1,6 @@
 # CodeBreakers React Lab
 
-![Keypad](https://media.giphy.com/media/3o6MbdTboTFWOUsLkc/giphy.gif)
+![Keypad](codebreakerspreview.png)
 
 ## The Goal
 
@@ -11,7 +11,7 @@ These components are half-built, but not fully-built. You're going to finish bui
 ## The Setup
 
 1. Clone this repository using `git clone`
-2. `cd` into the `security-panels-react-lab` folder
+2. `cd` into the project folder
 3. `npm install`
 4. `npm start`
 
@@ -60,6 +60,7 @@ The styling is mostly built out, so you probably won't need to work much on the 
 ###### Stretch features:
 * Right now, this puzzle is almost impossible. Make this third part more manageable by either making the `winning` function more flexible, or by making the clue a little more interesting.
 
+## Extension
 ### BONUS Part Four: The Slider Puzzle
 
 This last part was built, but never finished, and it isn't included in the `App.js` file yet. The actual sliding mechanic is already built out, but the answer key and some other features (including the `winning()` function to see if the puzzle is finished correctly) still need to be built out.

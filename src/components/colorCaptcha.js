@@ -31,6 +31,7 @@ const ColorCaptcha = () => {
     const green = component.state.green
     const blue = component.state.blue
     let yourColor = `rgb(${red}, ${green}, ${blue})`
+    console.log(yourColor)
 
     return (
       <div className={"ColorCaptcha " + (component.winning() ? "winning" : "losing")}>
