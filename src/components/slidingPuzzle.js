@@ -1,5 +1,5 @@
-import React from 'react'
-import './slidingPuzzle.css'
+import React from 'react';
+import './slidingPuzzle.css';
 
 const swap = (slots, a, b) => {
   [slots[a], slots[b]] = [slots[b], slots[a]]
@@ -28,29 +28,30 @@ const htmlifySlots = (slots, comp) => {
   })
 }
 
-const SlidingPuzzle = () => {
-  const component = new React.Component()
-  component.state = {
-    slots:[
-      "A",
-      "B",
-      "C",
-      "D",
-      "E",
-      "F",
-      "G",
-      "H",
-      " ",
-    ]
+class SlidingPuzzle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      slots:[
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        " ",
+      ]
+    }
   }
-  component.render = () => {
+  render() {
     return (
       <div className="slidingPuzzle">
-        {htmlifySlots(component.state.slots, component)}
+        {htmlifySlots(this.state.slots, this)}
       </div>
-    )
+    );
   }
-  return component
 }
 
-export default SlidingPuzzle
+export default SlidingPuzzle;

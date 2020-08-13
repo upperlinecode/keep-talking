@@ -1,65 +1,62 @@
-import React from 'react'
+import React, {Component} from 'react'
 import './checkboxes.css'
 
-const Checkboxes = () => {
-  const component = new React.Component()
-  // This version starts with four checkmarks.
-  // Make them work before adding more.
-  component.answerKey = [
-    true, false, true, true
-  ]
-
-  component.state = {
-    checks: [true, false, true, true]
+class Checkboxes extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      checks: [true, false, true, true]
+    }
+    this.answerKey = [true, false, true, true]
   }
-
-  component.handleClickForBox = (i) => {
+  
+  handleClickForBox = (i) => {
     // This first line exists just for debugging purposes.
     console.log("You clicked on box #" + i)
     // Start by accessing the current array of checks.
-    const arrayOfChecks = component.state.checks
+    const arrayOfChecks = this.state.checks
     console.log(arrayOfChecks)
+    console.log(this.answerKey)
     // Do whatever logic you'll need to do to update that box.
     // YOUR
     // CODE
     // HERE
-    // (Remember to use the component.setState(newState) method afterwards!)
+    // (Remember to use the this.setState(newState) method afterwards!)
   }
 
-  component.countTrue = (arrayOfChecks) => {
+  countTrue = (arrayOfChecks) => {
     // You'll want to write a method that counts the number of "true" in your
     // state's "checks" array, so that you can tell the user what their
     // checkmarks are. Right now there's a placeholder return value: "##".
     return "##"
   }
 
-  component.winning = () => {
+  winning = () => {
     // You'll need to write a function that returns false, unless every item
     // in your array matches the answer key. Right now there's a placeholder
     // return value of false.
     return false
   }
 
-  component.render = () => {
-    // To increase readability we are unpacking the checks array here
-    const arrayOfChecks = component.state.checks
+  render() {
+    // To increase readability we are unpacking the checks array here.
+    const arrayOfChecks = this.state.checks
     return (
-      <div className={"Checkboxes " + (component.winning(arrayOfChecks) ? "winning" : "losing")}>
+      <div className={"Checkboxes " + (this.winning(arrayOfChecks) ? "winning" : "losing")}>
         <h1 className="directions">Check only the correct boxes</h1>
         <div className="hint">
           <h3>Target Sum: 3</h3>
-          <h3>Your Sum: {component.countTrue(arrayOfChecks)}</h3>
+          <h3>Your Sum: {this.countTrue(arrayOfChecks)}</h3>
         </div>
         <div className="checkGrid">
-          <div className={"checkbox " + arrayOfChecks[0]} onClick={()=>component.handleClickForBox(0)}/>
-          <div className={"checkbox " + arrayOfChecks[1]} onClick={()=>component.handleClickForBox(1)}/>
+          <div className={"checkbox " + arrayOfChecks[0]} onClick={()=>this.handleClickForBox(0)}/>
+          <div className={"checkbox " + arrayOfChecks[1]} onClick={()=>this.handleClickForBox(1)}/>
           <div className={"checkbox "} />
           <div className={"checkbox "} />
         </div>
       </div>
     )
   }
-  return component
 }
 
-export default Checkboxes
+export default Checkboxes;
